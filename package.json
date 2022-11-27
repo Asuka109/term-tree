@@ -4,6 +4,7 @@
   "description": "Tree structure utils for terminal printing and file traversing.",
   "main": "index.js",
   "bin": "./bin.js",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">=12"
   },
