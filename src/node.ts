@@ -74,6 +74,7 @@ export const createTreeFromFiles = (
       const filename = src.name;
       if (!options.absolute) {
         src.name = path.relative(parent?.name || cwd, src.name);
+        src.name ||= '.';
       }
       options.processor?.(src, filename, parent);
     });

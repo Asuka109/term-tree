@@ -7,18 +7,31 @@ import { arrayFromAsyncGenerator } from '../src/utils';
 
 test('walkDirectory', async () => {
   const walking = walkDirectory(path.dirname(__dirname), {
-    filter: filename => !filename.includes('node_modules')
+    filter(filename) {
+      return !filename.startsWith('.');
+    },
   });
   const files = await arrayFromAsyncGenerator(walking);
   const tree = createTreeFromFiles(files.map(([filename]) => filename));
   expect(renderTree(tree)).toMatchInlineSnapshot(`
-    "
-    ├── .eslintrc.js
-    ├── .vscode/settings.json
-    ├── foo.mjs
+    ".
+    ├── bin.js
+    ├── dist
+    │   ├── cli.js
+    │   ├── fs.js
+    │   ├── index.js
+    │   ├── node.js
+    │   ├── render.js
+    │   ├── types.js
+    │   └── utils.js
+    ├── node_modules
+    │   ├── @eslint
+    │   ├── @types
+    │   └── @typescript-eslint
     ├── package.json
     ├── pnpm-lock.yaml
     ├── src
+    │   ├── cli.ts
     │   ├── fs.ts
     │   ├── index.ts
     │   ├── node.ts
@@ -27,7 +40,9 @@ test('walkDirectory', async () => {
     │   └── utils.ts
     ├── tests
     │   ├── fs.test.ts
-    │   └── node.test.ts
-    └── tsconfig.json"
+    │   ├── node.test.ts
+    │   └── tsconfig.json
+    ├── tsconfig.json
+    └── vitest.config.ts"
   `);
 });

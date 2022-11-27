@@ -73,6 +73,7 @@ export const renderTree = (
   } else {
     symbols = options.symbols || SYMBOLS_ANSI;
   }
+  assert(typeof symbols === 'object', 'Invalid tree symbols');
   const opts = { ...options, symbols };
   return renderTreeImpl(source, 0, '', opts, true).join('\n');
 };
