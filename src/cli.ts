@@ -20,6 +20,7 @@ export interface CommandLineOptions {
   includeDots: boolean;
   includeNodeModules: boolean;
   review: boolean;
+  json: boolean;
 }
 
 const createFilter = (opts: CommandLineOptions) => (filename: string) => {
@@ -74,6 +75,7 @@ export const createProgram = () => {
     .option('-D, --include-dots', 'include dot files')
     .option('-M, --include-node-modules', 'include node_modules')
     .option('-r, --review', 'print and review the options')
+    .option('-j, --json', 'output as json')
     .action(async (cwd: string, opts: CommandLineOptions) => {
       opts.cwd = path.resolve(cwd);
       opts.review && console.log('options: ', opts);
@@ -83,7 +85,12 @@ export const createProgram = () => {
       const files = pairs.map(([filename]) => filename);
       const processor = createTreeProcessor(opts, pairs);
       const tree = createTreeFromFiles(files, { ...opts, processor });
-      console.log(renderTree(tree, opts));
+      if (opts.json) {
+        console.log(JSON.stringify(tree, null, 2));
+      } else {
+        const text = renderTree(tree, opts);
+        console.log(text);
+      }
     });
   return program;
 };
