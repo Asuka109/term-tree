@@ -9,16 +9,17 @@ export interface WalkDirectoryOptions {
   followSymlink?: boolean;
 }
 
+/** Generate and walk the directory tree. */
 export async function* walkDirectory(
   dir: string,
-  options: WalkDirectoryOptions = {}
+  options?: WalkDirectoryOptions
 ): AsyncGenerator<[string, fs.Stats]> {
   const opts: Required<WalkDirectoryOptions> = {
-    cwd: options.cwd ?? process.cwd(),
-    fs: options.fs ?? fs.promises,
-    depth: options.depth ?? Number.POSITIVE_INFINITY,
-    filter: options.filter ?? (() => true),
-    followSymlink: options.followSymlink ?? false,
+    cwd: options?.cwd ?? process.cwd(),
+    fs: options?.fs ?? fs.promises,
+    depth: options?.depth ?? Number.POSITIVE_INFINITY,
+    filter: options?.filter ?? (() => true),
+    followSymlink: options?.followSymlink ?? false,
   };
   const filename = path.resolve(opts.cwd, dir);
   if (opts.depth < 0 || !opts.filter(filename)) {

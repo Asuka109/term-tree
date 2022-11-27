@@ -1,3 +1,4 @@
+/** Create an array from async generator. */
 export const arrayFromAsyncGenerator = async <T>(
   generator: AsyncGenerator<T>
 ): Promise<T[]> => {

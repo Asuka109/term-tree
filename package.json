@@ -1,7 +1,7 @@
 {
   "name": "term-tree",
   "version": "0.0.1",
-  "description": "Tree structure tools for terminal printing and file traversing.",
+  "description": "Tree structure utils for terminal printing and file traversing.",
   "main": "index.js",
   "bin": "./bin.js",
   "engines": {
@@ -11,9 +11,10 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w --sourceMap",
-    "prepare": "pnpm build",
+    "prepare": "pnpm build && pnpm api:generate",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "api:generate": "documentation readme src/index.ts --pe ts -g --section=API"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,9 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "documentation": "^14.0.0",
     "eslint": "^8.28.0",
+    "jsdoc-to-markdown": "^7.1.1",
     "typescript": "^4.9.3",
     "vitest": "^0.25.3"
   },

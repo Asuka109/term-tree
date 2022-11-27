@@ -18,11 +18,14 @@ export const SYMBOLS_ASCII: TreeSymbols = {
 };
 
 export interface RenderTreeOptions {
-  /** @default 'ansi' */
+  /**
+   * The symbols to use for rendering the tree.
+   * @default 'ansi'
+   */
   symbols?: TreeSymbols | 'ansi' | 'ascii';
 }
 
-/** Credit to {@link https://github.com/yangshun/tree-node-cli} */
+/** @private Credit to {@link https://github.com/yangshun/tree-node-cli} */
 export function renderTreeImpl(
   source: TreeNode,
   currentDepth = 0,
@@ -61,6 +64,7 @@ export function renderTreeImpl(
   return lines;
 }
 
+/** Render the tree node into terminal graph. */
 export const renderTree = (
   source: TreeNode,
   options: RenderTreeOptions = {},

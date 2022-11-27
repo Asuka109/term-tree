@@ -2,6 +2,7 @@ import path from 'path';
 import assert from 'assert';
 import { TreeNode } from './types';
 
+/** Visit the tree node and its children in DFS. */
 export const visitTree = (
   source: TreeNode,
   handler: (src: TreeNode, parent?: TreeNode) => void,
@@ -18,6 +19,7 @@ export interface CreateTreeFromFilesOptions {
   combine?: boolean;
 }
 
+/** Create a tree from a list of files. */
 export const createTreeFromFiles = (
   files: readonly string[],
   options: CreateTreeFromFilesOptions = {},
