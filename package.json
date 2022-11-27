@@ -16,8 +16,8 @@
     "test:watch": "vitest watch",
     "api:generate": "documentation readme src/index.ts --pe ts -g --section=API"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["tree", "cli", "terminal", "walk", "traverse", "file", "directory"],
+  "author": "Asuka109",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^18.11.9",
