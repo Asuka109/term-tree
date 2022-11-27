@@ -1,5 +1,5 @@
-import assert from 'assert';
 import path from 'path';
+import assert from 'assert';
 import { TreeNode } from './types';
 
 export const visitTree = (

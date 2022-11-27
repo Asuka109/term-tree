@@ -1,4 +1,4 @@
-import assert from 'node:assert';
+import assert from 'assert';
 import { TreeNode, TreeSymbols } from './types';
 
 export const SYMBOLS_ANSI: TreeSymbols = {

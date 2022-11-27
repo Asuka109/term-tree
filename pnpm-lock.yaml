@@ -6,11 +6,13 @@ specifiers:
   '@typescript-eslint/parser': ^5.44.0
   commander: ^9.4.1
   eslint: ^8.28.0
+  filesize: ^10.0.5
   typescript: ^4.9.3
   vitest: ^0.25.3
 
 dependencies:
   commander: 9.4.1
+  filesize: 10.0.5
 
 devDependencies:
   '@types/node': 18.11.9
@@ -788,6 +790,11 @@ packages:
     dependencies:
       flat-cache: 3.0.4
     dev: true
+
+  /filesize/10.0.5:
+    resolution: {integrity: sha512-qrzyt8gLh86nsyYiC3ibI5KyIYRCWg2yqIklYrWF4a0qNfekik4OQfn7AoPJG2hRrPMSlH6fET4VEITweZAzjA==}
+    engines: {node: '>= 14.0.0'}
+    dev: false
 
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}

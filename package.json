@@ -1,8 +1,9 @@
 {
   "name": "term-tree",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Tree structure tools for terminal printing and file traversing.",
   "main": "index.js",
+  "bin": "./bin.js",
   "engines": {
     "node": ">=12"
   },
@@ -26,6 +27,7 @@
     "vitest": "^0.25.3"
   },
   "dependencies": {
-    "commander": "^9.4.1"
+    "commander": "^9.4.1",
+    "filesize": "^10.0.5"
   }
 }
