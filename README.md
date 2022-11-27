@@ -102,7 +102,7 @@ console.log(graph);
 
 ### arrayFromAsyncGenerator
 
-[src/utils.ts:2-10](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/utils.ts#L2-L10 "Source code on GitHub")
+[src/utils.ts:2-10](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/utils.ts#L2-L10 "Source code on GitHub")
 
 Create an array from async generator.
 
@@ -114,7 +114,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 ### visitTree
 
-[src/node.ts:6-13](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/node.ts#L6-L13 "Source code on GitHub")
+[src/node.ts:6-13](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/node.ts#L6-L13 "Source code on GitHub")
 
 Visit the tree node and its children in DFS.
 
@@ -126,7 +126,7 @@ Visit the tree node and its children in DFS.
 
 ### createTreeFromFiles
 
-[src/node.ts:23-84](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/node.ts#L23-L84 "Source code on GitHub")
+[src/node.ts:23-84](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/node.ts#L23-L84 "Source code on GitHub")
 
 Create a tree from a list of files.
 
@@ -137,7 +137,7 @@ Create a tree from a list of files.
 
 ### symbols
 
-[src/render.ts:25-25](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/render.ts#L25-L25 "Source code on GitHub")
+[src/render.ts:25-25](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/render.ts#L25-L25 "Source code on GitHub")
 
 The symbols to use for rendering the tree.
 
@@ -145,7 +145,7 @@ Type: (TreeSymbols | `"ansi"` | `"ascii"`)
 
 ### renderTree
 
-[src/render.ts:68-83](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/render.ts#L68-L83 "Source code on GitHub")
+[src/render.ts:68-83](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/render.ts#L68-L83 "Source code on GitHub")
 
 Render the tree node into terminal graph.
 
@@ -156,7 +156,7 @@ Render the tree node into terminal graph.
 
 ### walkDirectory
 
-[src/fs.ts:13-48](https://github.com/Asuka109/term-tree/blob/818b7dcc8bca3a4952e382918a9f2706dccaabd5/src/fs.ts#L13-L48 "Source code on GitHub")
+[src/fs.ts:13-48](https://github.com/Asuka109/term-tree/blob/ac4c0aaa9494d431f9c723ae6e499deb2f76c685/src/fs.ts#L13-L48 "Source code on GitHub")
 
 Generate and walk the directory tree.
 
