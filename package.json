@@ -1,6 +1,6 @@
 {
   "name": "term-tree",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tree structure utils for terminal printing and file traversing.",
   "main": "index.js",
   "bin": "./bin.js",
