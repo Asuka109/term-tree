@@ -10,6 +10,8 @@
 
 ### Node.js
 
+Create and print filenames from array.
+
 ```js
 import { createTreeFromFiles, renderTree } from 'term-tree'
 
@@ -31,6 +33,21 @@ console.log(graph);
     │   ├── bar.ts
     │   └── baz.ts
     └── package.json
+
+Walk directory to read files:
+
+```js
+import fs from 'fs/promises';
+import { walkDirectory } from 'term-tree';
+
+const files = {};
+
+for await (const [name, stats] of walkDirectory('./')) {
+  if (stats.isFile) {
+    files[name] = await fs.readFile(name, 'utf8');
+  }
+}
+```
 
 ### Command Line
 
@@ -88,17 +105,24 @@ console.log(graph);
 
 #### Table of Contents
 
-*   [arrayFromAsyncGenerator](#arrayfromasyncgenerator)
-    *   [Parameters](#parameters)
-*   [visitTree](#visittree)
-    *   [Parameters](#parameters-1)
-*   [createTreeFromFiles](#createtreefromfiles)
-    *   [Parameters](#parameters-2)
-*   [symbols](#symbols)
-*   [renderTree](#rendertree)
-    *   [Parameters](#parameters-3)
-*   [walkDirectory](#walkdirectory)
-    *   [Parameters](#parameters-4)
+- [term-tree](#term-tree)
+  - [Install](#install)
+  - [Usage](#usage)
+    - [Node.js](#nodejs)
+    - [Command Line](#command-line)
+  - [API](#api)
+      - [Table of Contents](#table-of-contents)
+    - [arrayFromAsyncGenerator](#arrayfromasyncgenerator)
+      - [Parameters](#parameters)
+    - [visitTree](#visittree)
+      - [Parameters](#parameters-1)
+    - [createTreeFromFiles](#createtreefromfiles)
+      - [Parameters](#parameters-2)
+    - [symbols](#symbols)
+    - [renderTree](#rendertree)
+      - [Parameters](#parameters-3)
+    - [walkDirectory](#walkdirectory)
+      - [Parameters](#parameters-4)
 
 ### arrayFromAsyncGenerator
 
